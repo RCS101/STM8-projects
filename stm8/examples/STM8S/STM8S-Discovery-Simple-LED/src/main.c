@@ -1,16 +1,16 @@
 #include <iostm8s105c6.h>
+
+
+// Delay loop
 //
-////
-//// Delay loop
-////
-//// Actual delay depends on clock settings
-//// and compiler optimization settings.
-////
-//void delay(unsigned int n)
-//{
-//  while (n-- > 0);
-//}
+// Actual delay depends on clock settings
+// and compiler optimization settings.
 //
+void delay(unsigned int n)
+{
+  while (n-- > 0);
+}
+
 //int main( void )
 //{
 //  //
@@ -19,7 +19,7 @@
 //  // 0: Input
 //  // 1: Output
 //  //
-//  PD_DDR_bit.DDR0 = 1;
+//  PB_DDR_bit.DDR0 = 1;
 //  
 //  //
 //  // Control Register 1
@@ -32,7 +32,7 @@
 //  //   0: Pseudo open drain
 //  //   1: Push-pull
 //  //
-//  PD_CR1_bit.C10 = 1;
+//  PB_CR1_bit.C14 = 1;
 //  
 //  //
 //  // Control Register 2
@@ -45,21 +45,21 @@
 //  //   0: Output speed up to  2 MHz
 //  //   1: Output speed up to 10 MHz
 //  //
-//  PD_CR2_bit.C20 = 1;
+//  PB_CR2_bit.C24 = 1;
 //  
 //  //
 //  // Output Data Register
 //  //
 //  // Output value
 //  //
-//  PD_ODR_bit.ODR0 = 0;
+//  PB_ODR_bit.ODR4 = 0;
 //  
 //  //
 //  // Main loop
 //  //
 //  while (1)
 //  {
-//    PD_ODR_bit.ODR0 = !PD_ODR_bit.ODR0;
+//    PB_ODR_bit.ODR4 = !PB_ODR_bit.ODR4;
 //    delay(60000);
 //  }
 //}
@@ -67,14 +67,16 @@
 
 int main(void)
 {
-  PD_ODR = 0;
-  PD_DDR_DDR4 = 1;
-  PD_CR1_C14 = 1;
-  PD_CR2_C24 = 1;
+  PB_ODR = 0;
+  PB_DDR_DDR5 = 1;
+  PB_CR1_C14 = 1;
+  PB_CR2_C24 = 1;
   
   while(1)
   {
-    PD_ODR_ODR4 = 1;
-    PD_ODR_ODR4 = 0;
+    PB_ODR_ODR4 = 1;
+    delay(60000);
+    PB_ODR_ODR4 = 0;
+    delay(60000);
   }
 }

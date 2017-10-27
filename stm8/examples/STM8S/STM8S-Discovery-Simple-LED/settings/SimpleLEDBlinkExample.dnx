@@ -12,8 +12,11 @@
         <ByteLimit>50</ByteLimit>
     </Stack>
     <DebugChecksum>
-        <Checksum>4036474238</Checksum>
+        <Checksum>2322184916</Checksum>
     </DebugChecksum>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
     <DataSample>
         <LogEnabled>0</LogEnabled>
         <GraphEnabled>0</GraphEnabled>
@@ -35,9 +38,6 @@
         <Count>0</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
-    <CallStack>
-        <ShowArgs>0</ShowArgs>
-    </CallStack>
     <DebuggerSettings>
         <DisableInterruptsWhenStepping>0</DisableInterruptsWhenStepping>
         <LeaveTargetRunning>0</LeaveTargetRunning>
